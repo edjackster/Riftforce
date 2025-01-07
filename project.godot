@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Riftforce"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/simple_card_pile_ui/plugin.cfg")
+
 [input]
 
 mouse_left={
