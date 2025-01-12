@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtdjmevliousc"]
+
+[ext_resource type="Script" path="res://addons/simple_card_pile_ui/card_ui.gd" id="1_3mcey"]
+[ext_resource type="Texture2D" uid="uid://b0xclw8at30et" path="res://assets/main/cards/elementals/air/5.jpg" id="2_al5f0"]
+[ext_resource type="Texture2D" uid="uid://bol0ll32fxyas" path="res://assets/main/cards/back.jpg" id="3_3oct4"]
+
+[node name="ElementalCardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_3mcey")
+
+[node name="Backface" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 521.0
+offset_bottom = 727.0
+texture = ExtResource("3_3oct4")
+
+[node name="Frontface" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 521.0
+offset_bottom = 727.0
+texture = ExtResource("2_al5f0")

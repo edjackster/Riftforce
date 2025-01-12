@@ -1,0 +1,98 @@
+[
+    {
+        "nice_name": "5 of Air",
+        "texture_path": "res://assets/main/cards/elementals/air/5.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 5,
+        "element": "air"
+    },
+    {
+        "nice_name": "6 of Air",
+        "texture_path": "res://assets/main/cards/elementals/air/6.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 6,
+        "element": "air"
+    },
+    {
+        "nice_name": "7 of Air",
+        "texture_path": "res://assets/main/cards/elementals/air/7.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 7,
+        "element": "air"
+    },
+    {
+        "nice_name": "5 of Crystal",
+        "texture_path": "res://assets/main/cards/elementals/crystal/5.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 5,
+        "element": "crystal"
+    },
+    {
+        "nice_name": "6 of Crystal",
+        "texture_path": "res://assets/main/cards/elementals/crystal/6.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 6,
+        "element": "crystal"
+    },
+    {
+        "nice_name": "7 of Crystal",
+        "texture_path": "res://assets/main/cards/elementals/crystal/7.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 7,
+        "element": "crystal"
+    },
+    {
+        "nice_name": "5 of Darkness",
+        "texture_path": "res://assets/main/cards/elementals/darkness/5.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 5,
+        "element": "darkness"
+    },
+    {
+        "nice_name": "6 of Darkness",
+        "texture_path": "res://assets/main/cards/elementals/darkness/6.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 6,
+        "element": "darkness"
+    },
+    {
+        "nice_name": "7 of Darkness",
+        "texture_path": "res://assets/main/cards/elementals/darkness/7.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 7,
+        "element": "darkness"
+    },
+    {
+        "nice_name": "5 of Earth",
+        "texture_path": "res://assets/main/cards/elementals/earth/5.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 5,
+        "element": "earth"
+    },
+    {
+        "nice_name": "6 of Earth",
+        "texture_path": "res://assets/main/cards/elementals/earth/6.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 6,
+        "element": "earth"
+    },
+    {
+        "nice_name": "7 of Earth",
+        "texture_path": "res://assets/main/cards/elementals/earth/7.jpg",
+        "backface_texture_path": "res://assets/main/cards/back.jpg",
+        "resource_script_path": "res://card_data.gd",
+        "value": 7,
+        "element": "earth"
+    }
+]

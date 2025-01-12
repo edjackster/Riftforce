@@ -1,0 +1,251 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxtlmafsc130q"]
+
+[ext_resource type="Script" path="res://scenes/test.gd" id="1_5g8tb"]
+[ext_resource type="Script" path="res://addons/simple_card_pile_ui/card_pile_ui_debugger.gd" id="1_crtir"]
+[ext_resource type="Script" path="res://scenes/dropzone__discard.gd" id="2_o4jmv"]
+[ext_resource type="Texture2D" uid="uid://c3giux1qe0rpo" path="res://icon.svg" id="3_f0wnx"]
+[ext_resource type="Script" path="res://scenes/dropzone__by_element.gd" id="4_xpvyx"]
+[ext_resource type="Script" path="res://addons/simple_card_pile_ui/card_pile_ui.gd" id="5_dsjo2"]
+[ext_resource type="PackedScene" uid="uid://dtdjmevliousc" path="res://elemental_card_ui.tscn" id="7_frtd8"]
+
+[sub_resource type="Curve" id="Curve_51i5e"]
+min_value = -15.0
+max_value = 15.0
+_data = [Vector2(0, -14.4994), 0.0, 27.1909, 0, 0, Vector2(1, 15), 31.6031, 38.6251, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_b2qsp"]
+max_value = 50.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501425, 37.7086), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_5g8tb")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Buttons"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 362.0
+offset_bottom = 245.0
+columns = 2
+
+[node name="DrawButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Draw"
+
+[node name="Draw3Button" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Draw 3"
+
+[node name="SortButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Sort Hand"
+
+[node name="DiscardRandomButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Discard Random"
+
+[node name="DiscardHandButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Discard Hand"
+
+[node name="ReturnRandomDiscardButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Return Random Discard
+To Hand"
+
+[node name="DiscardTopCardFromDropzonesButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Discard Top Card of all 
+Dropzones"
+
+[node name="RemoveRandomCardButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Remove Random Card
+In Hand From Game"
+
+[node name="ResetButton" type="Button" parent="Buttons/GridContainer"]
+layout_mode = 2
+text = "Reset
+"
+
+[node name="CardPileUIDebugger" type="RichTextLabel" parent="Buttons" node_paths=PackedStringArray("card_pile_ui")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 272.0
+offset_right = 340.0
+offset_bottom = 368.0
+scroll_following = true
+script = ExtResource("1_crtir")
+card_pile_ui = NodePath("../../CardPileUI")
+
+[node name="DiscardDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile_ui")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1250.0
+offset_top = 460.0
+offset_right = 1418.0
+offset_bottom = 700.0
+script = ExtResource("2_o4jmv")
+card_pile_ui = NodePath("../CardPileUI")
+can_drag_top_card = false
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="DiscardDropzone"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 240.0
+texture = ExtResource("3_f0wnx")
+
+[node name="Label" type="Label" parent="DiscardDropzone"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -48.0
+offset_right = 109.0
+offset_bottom = -25.0
+text = "Discard"
+
+[node name="AirDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile_ui")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 519.0
+offset_top = 73.0
+offset_right = 687.0
+offset_bottom = 313.0
+script = ExtResource("4_xpvyx")
+accept_element = "air"
+card_pile_ui = NodePath("../CardPileUI")
+layout = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AirDropzone"]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 240.0
+texture = ExtResource("3_f0wnx")
+
+[node name="Label" type="Label" parent="AirDropzone"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -45.0
+offset_right = 159.0
+offset_bottom = -14.0
+text = "Air"
+horizontal_alignment = 1
+
+[node name="CrystalDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile_ui")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 739.0
+offset_top = 74.0
+offset_right = 907.0
+offset_bottom = 314.0
+script = ExtResource("4_xpvyx")
+accept_element = "crystal"
+card_pile_ui = NodePath("../CardPileUI")
+layout = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CrystalDropzone"]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 240.0
+texture = ExtResource("3_f0wnx")
+
+[node name="Label" type="Label" parent="CrystalDropzone"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -45.0
+offset_right = 159.0
+offset_bottom = -14.0
+text = "Crystal
+"
+horizontal_alignment = 1
+
+[node name="DarknessDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile_ui")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 959.0
+offset_top = 73.0
+offset_right = 1127.0
+offset_bottom = 313.0
+script = ExtResource("4_xpvyx")
+accept_element = "darkness"
+card_pile_ui = NodePath("../CardPileUI")
+layout = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="DarknessDropzone"]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 240.0
+texture = ExtResource("3_f0wnx")
+
+[node name="Label" type="Label" parent="DarknessDropzone"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -45.0
+offset_right = 159.0
+offset_bottom = -14.0
+text = "Darkness"
+horizontal_alignment = 1
+
+[node name="EarthDropzone" type="Control" parent="." node_paths=PackedStringArray("card_pile_ui")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1179.0
+offset_top = 74.0
+offset_right = 1347.0
+offset_bottom = 314.0
+script = ExtResource("4_xpvyx")
+accept_element = "earth"
+card_pile_ui = NodePath("../CardPileUI")
+layout = 1
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="EarthDropzone"]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 240.0
+texture = ExtResource("3_f0wnx")
+
+[node name="Label" type="Label" parent="EarthDropzone"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -45.0
+offset_right = 159.0
+offset_bottom = -14.0
+text = "Earth
+"
+horizontal_alignment = 1
+
+[node name="CardPileUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_dsjo2")
+json_card_database_path = "res://card_database.json"
+json_card_collection_path = "res://card_collection.json"
+extended_card_ui = ExtResource("7_frtd8")
+draw_pile_layout = 2
+hand_rotation_curve = SubResource("Curve_51i5e")
+hand_vertical_curve = SubResource("Curve_b2qsp")
+
+[connection signal="pressed" from="Buttons/GridContainer/DrawButton" to="." method="_on_draw_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/Draw3Button" to="." method="_on_draw_3_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/SortButton" to="." method="_on_sort_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/DiscardRandomButton" to="." method="_on_discard_random_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/DiscardHandButton" to="." method="_on_discard_hand_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/ReturnRandomDiscardButton" to="." method="_on_return_random_discard_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/DiscardTopCardFromDropzonesButton" to="." method="_on_discard_top_card_from_dropzones_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/RemoveRandomCardButton" to="." method="_on_remove_random_card_button_pressed"]
+[connection signal="pressed" from="Buttons/GridContainer/ResetButton" to="." method="_on_reset_button_pressed"]
