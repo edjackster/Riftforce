@@ -37,7 +37,7 @@ func _on_discard_random_button_pressed():
 
 func _on_sort_button_pressed():
 	card_pile_ui.sort_hand(func(a, b):
-		if a.card_data.suit == b.card_data.suit:
+		if a.card_data.element == b.card_data.element:
 			return a.card_data.value < b.card_data.value
 		else:
 			return a.card_data.element < b.card_data.element
